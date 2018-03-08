@@ -1,0 +1,5 @@
+<% @galleries.each do |gallery| %>
+  <%= link_to "#{gallery.name}", gallery_path(gallery) %>
+<% end %>
+
+<%= link_to "Add New Gallery", new_gallery_path %>

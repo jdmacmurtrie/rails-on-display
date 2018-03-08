@@ -1,0 +1,14 @@
+<h1>Painting Form for <%= @gallery.name %></h1>
+
+<%= form_for [@gallery, @art_piece] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+
+  <%= f.label :artist %>
+  <%= f.text_field :artist %>
+
+  <%= f.submit "Add Art Piece" %>
+<% end %>

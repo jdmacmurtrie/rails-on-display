@@ -1,0 +1,14 @@
+<h1><%= @gallery.name %></h1>
+<%= @gallery.city %>
+<%= @gallery.state %>
+<%= @gallery.zip %>
+<%= @gallery.description %>
+
+<% @art_pieces.each do |art| %>
+  <%= art.title %>
+  <%= art.year %>
+  <%= art.artist %>
+  <%= art.created_at.strftime("%B %d %Y") %>
+<% end %>
+
+<%= link_to "Add Art Piece", new_gallery_art_piece_path(@gallery) %>
