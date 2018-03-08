@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-feature "visitor sees list of paintings in the gallery on the gallery show page" do
+feature "visitor sees list of art pieces in the gallery on the gallery show page" do
   scenario "sees reviews for specific gallery" do
     barnes = Gallery.create(name: "The Barnes Foundation", city: "Philadelphia", state: "PA", zip: "19130")
     postman = ArtPiece.create(title: "The Postman", year: "1889", artist: "Vincent can Gogh", gallery: barnes)
@@ -15,7 +15,7 @@ feature "visitor sees list of paintings in the gallery on the gallery show page"
     expect(page).to have_content postman.created_at.strftime("%B %d %Y")
   end
 
-  scenario "does not see other paintings for other galleries" do
+  scenario "does not see other art pieces for other galleries" do
     barnes = Gallery.create(name: "The Barnes Foundation", city: "Philadelphia", state: "PA", zip: "19130")
     rodin = Gallery.create(name: "The Rodin Museum", city: "Philadelphia", state: "PA", zip: "19130")
     postman = ArtPiece.create(title: "The Postman", year: "1889", artist: "Vincent can Gogh", gallery: barnes)
